@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=your_db_host
+      - DB_USER=your_db_user
+      - DB_PASS=your_db_pass
+      - DB_NAME=your_db_name
+      - JWT_SECRET=your_jwt_secret
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
